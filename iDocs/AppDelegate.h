@@ -7,9 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Document;
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    
+    UIWindow *window;
+    UINavigationController *navigationController;
+	
+	NSMutableArray *documentArray;
+    
+}
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) NSMutableArray *documentArray;
+
+- (void) copyDatabaseIfNeeded;
+- (NSString *) getDBPath;
+
+- (void) removeDocument:(Document *)doc;
+- (void) addDocument:(Document *)doc;
 
 @end
